@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CONCRETE COMPRESSIVE STRENGHT PREDICTOR</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+
+<body>
+
+
+
+
+<style>
+body {
+  background-image: url("static/cement.jpg");
+  background-position: 200%;
+  background-size: cover;
+}
+</style>
+
+<h2>CONCRETE COMPRESSIVE STRENGHT</h2>
+    <h2> PREDICTOR</h2><br>
+<br>
+
+ <div class="login">
+	
+<br>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" name="cement" placeholder="cement" required="required" />
+        <input type="number" name="blast_furnace_slag" placeholder="blast furnace_slag" required="required" />
+		<input type="number" name="fly_ash" placeholder="fly ash" required="required" />
+        <input type="number" name="water" placeholder="water" required="required" />
+        <input type="number" name="superplasticizer" placeholder="superplasticizer" required="required" />
+        <input type="number" name="coarse_aggregate" placeholder="coarse aggregate" required="required" />
+        <input type="number" name="fine_aggregate" placeholder="fine aggregate" required="required" />
+        <input type="number" name="age" placeholder="age" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+   <br>
+   <br>
+   <p class="hi">DEVELOPED BY JOWIN ALFRED C</p>
+ </div>
+
+
+</body>
+</html>
